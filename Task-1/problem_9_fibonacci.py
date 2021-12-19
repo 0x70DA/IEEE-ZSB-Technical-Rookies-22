@@ -3,17 +3,19 @@
 
 def fib_sequence(n):
     if n == 1:
-        return 0
-    arr = [0, 1]
-    for _ in range(n - 2):
-        # Append the sum of the last two numbers.
-        arr.append(arr[-1] + arr[-2])
-    return arr
+        print(0)
+    elif n > 1:
+        num = 0
+        next_num = 1
+        print(num, next_num, sep=' ', end=' ')
+        for _ in range(n - 2):
+            num, next_num = next_num, next_num + num
+            print(next_num, end=' ')
 
 
 def main():
     n = int(input())
-    print(*fib_sequence(n))
+    fib_sequence(n)
 
 
 if __name__ == '__main__':
